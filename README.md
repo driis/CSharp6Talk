@@ -1,2 +1,27 @@
-# CSharp6Talk
-Notes and code samples for brown bag talk about new features in C#6.
+# What's new in C#6 ? 
+
+Based on: https://github.com/dotnet/roslyn/wiki/Languages-features-in-C%23-6-and-VB-14 
+
+Agenda of this talk:
+
+## Null propagation
+* Use new `.?` operator if something might be null ...
+
+## String interpolation
+* Known from a lot of other languages (Ruby ...)
+* String formatting made easy
+
+## Auto-properties
+* Getter-only auto-properties
+* Auto-property initializers
+* Ctor assignment to getter-only autoprops
+
+## Exceptions
+* Await in catch/finally
+* Exception filters
+
+## Other small improvements
+* `nameof` operator
+* Dictionary initializer
+* `using` static members
+* #pragma
