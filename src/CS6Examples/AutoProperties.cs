@@ -24,5 +24,9 @@ namespace CS6Examples
             // Constructors (and only constructors) can assign to getter-only autoproperties.
             X = x;
         }
+
+        // An interesting point, the proposed primary constructor feature which was available in earlier builds, 
+        // Is not included in CTP6.
+
     }
 }

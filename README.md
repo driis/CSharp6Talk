@@ -1,6 +1,6 @@
-# What's new in C#6 ? 
+# What's new in C#6 ?
 
-Based on: https://github.com/dotnet/roslyn/wiki/Languages-features-in-C%23-6-and-VB-14 
+Based on: https://github.com/dotnet/roslyn/wiki/Languages-features-in-C%23-6-and-VB-14
 
 Agenda of this talk:
 
@@ -15,6 +15,9 @@ Agenda of this talk:
 * Getter-only auto-properties
 * Auto-property initializers
 * Ctor assignment to getter-only autoprops
+
+## Expression-bodied members
+- A member can be implemented by an expression
 
 ## Exceptions
 * Await in catch/finally

@@ -10,6 +10,9 @@ using static System.DateTime;
 // Static members in Console and DateTime are now in scope, similar to a normal using
 // - but on class level.
 
+// An observation is that while static usings might save you a bit of typing, and make some code look
+// simpler; they very quickly pollute the scope. I think they should be used sparingly.
+
 namespace CS6Examples
 {
     public class UsingStatic : IDemo
@@ -23,8 +26,8 @@ namespace CS6Examples
             WriteLine("You entered '{0}' at {1}", input, Now);
         }
 
-        
+
     }
 
-  
+
 }
