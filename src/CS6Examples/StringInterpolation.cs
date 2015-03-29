@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+
 using static System.Console;
 
 namespace CS6Examples
@@ -30,10 +32,16 @@ namespace CS6Examples
             // You can use any expression in a string interpolation:
             WriteLine($"Adding two plus two: {2 + 2}");
             WriteLine($"Today is {(new DateTime(2015, 12, 24) - DateTime.Now).TotalDays:0} until Christmas.");
-            
-            //IFormattable s = $"can we format {value}";
-            /*Type t = s.GetType();
-            Console.WriteLine(t);*/
+
+            // Specifying format info for string interpolations is possible:
+            string x = FormatInvariant($"{42.0m}");
+            WriteLine(x);
+        }
+
+        public static string FormatInvariant(object formattable)
+        {
+            return formattable.ToString();
+            // return formattable.ToString(null, CultureInfo.InvariantCulture);
         }
    
         class Foo
