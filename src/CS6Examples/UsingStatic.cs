@@ -4,7 +4,6 @@
 
 // Using static is simple syntactic sugar that lets you call a static method directly, 
 // without prefixing with the class name. An example:
-using System;
 using static System.Console;
 using static System.DateTime;
 // Static members in Console and DateTime are now in scope, similar to a normal using
@@ -25,9 +24,5 @@ namespace CS6Examples
             string input = ReadLine();
             WriteLine("You entered '{0}' at {1}", input, Now);
         }
-
-
     }
-
-
 }
