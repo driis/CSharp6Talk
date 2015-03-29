@@ -3,13 +3,16 @@
 Based on: https://github.com/dotnet/roslyn/wiki/Languages-features-in-C%23-6-and-VB-14
 
 Agenda of this talk:
-
-## Null propagation
-* Use new `.?` operator if something might be null ...
+## `using` static members
+* `using` Can now bring static members into scope
+* Should probably be used sparingly
 
 ## String interpolation
 * Known from a lot of other languages (Ruby ...)
 * String formatting made easy
+
+## Null propagation
+* Use new `.?` operator if something might be null ...
 
 ## Auto-properties
 * Getter-only auto-properties
@@ -26,5 +29,3 @@ Agenda of this talk:
 ## Other small improvements
 * `nameof` operator
 * Dictionary initializer
-* `using` static members
-* #pragma
