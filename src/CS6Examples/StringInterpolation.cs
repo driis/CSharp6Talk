@@ -2,7 +2,6 @@
 using System.Globalization;
 
 using static System.Console;
-
 namespace CS6Examples
 {
     public class StringInterpolation : IDemo
@@ -36,12 +35,24 @@ namespace CS6Examples
             // Specifying format info for string interpolations is possible:
             string x = FormatInvariant($"{42.0m}");
             WriteLine(x);
+
+            // System.FormattableString has a built in method for that (you could import it with using static):
+            WriteLine(FormattableString.Invariant($"{42.0m}"));
+
+            // It would be nice to be able to make a extension method for this ...
+            // But compiler magic is happening here, and it doesn't know the string is a FormattedString, unless we type it
+            // as such... 
+            // WriteLine($"{42.0m}".Invariant());   // Doesn't work
+            WriteLine(((FormattableString)$"{42.0m}").Invariant()); // Works, not pretty. Using static with FormattableString.Invariant is nicer.
+            
+            FormattableString f = $"{42.0m}";
+            WriteLine(f.Invariant());
+            WriteLine(f.FormattedWith(new CultureInfo("da-DK")));
         }
 
-        public static string FormatInvariant(object formattable)
+        public static string FormatInvariant(IFormattable formattable)
         {
-            return formattable.ToString();
-            // return formattable.ToString(null, CultureInfo.InvariantCulture);
+            return formattable.ToString(null, CultureInfo.InvariantCulture);
         }
    
         class Foo
@@ -53,5 +64,16 @@ namespace CS6Examples
         }
     }
 
+    public static class InterpolationExtensions
+    {
+        public static string Invariant(this IFormattable formattable)
+        {
+            return formattable.FormattedWith(CultureInfo.InvariantCulture);
+        }
 
+        public static string FormattedWith(this IFormattable formattable, CultureInfo culture)
+        {
+            return formattable.ToString(null, culture);
+        }
+    }
 }
