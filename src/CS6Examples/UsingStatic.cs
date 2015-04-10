@@ -1,6 +1,5 @@
-﻿// This code provides examples of two small but convenient new features in C#6:
-// Static usings, and
-// nameof operator
+﻿// This code provides examples of a small but convenient feature in C#6:
+// Static usings
 
 // Using static is simple syntactic sugar that lets you call a static method directly, 
 // without prefixing with the class name. An example:
